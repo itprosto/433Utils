@@ -31,7 +31,8 @@ int main(int argc, char *argv[]) {
      }
 
      int pulseLength = 0;
-     if (argv[1] != NULL) pulseLength = atoi(argv[1]);
+     if (argc > 1 && argv[1] != NULL) pulseLength = atoi(argv[1]);
+     if (argc > 2 && argv[1] != NULL) PIN = atoi(argv[2]);
 
      mySwitch = RCSwitch();
      if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
